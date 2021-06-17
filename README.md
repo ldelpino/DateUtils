@@ -59,8 +59,6 @@ Por favor dirijase al archivo [LICENSE](LICENSE) para mas informacion sobre la l
 
 [Documentacion](docs/DOCUMENTACION.md)
 
-[Politicas de seguridad](security/SECURITY.md)
+[Politicas de seguridad](SECURITY.md)
 
 [Aplicacion de Prueba](demo/DEMO.md)
-
-[Documentacion de Clases](docs/javadoc/index.html) 
