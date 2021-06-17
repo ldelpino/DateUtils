@@ -21,10 +21,13 @@ la libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) 
 **JDK:**
 1.8 o una version mas actual.
 La libreria fue realizada bajo la version 1.8.281 de la maquina virtual de Java.
+
 **Memoria:**
 No existen requisitos minimos de memoria para su utilizacion.
+
 **Espacio en disco:**
 Al menos 1 MB de espacio libre.
+
 **Sistemas Operativos:**
 Cualquier Sistema Operativo compatible com la ejecucion de aplicaciones realizadas bajo Java.
 Windows 2000 o versiones mas actuales.
@@ -52,8 +55,12 @@ Por favor dirijase al archivo [LICENSE](LICENSE) para mas informacion sobre la l
 
 ## Paginas GitHub
 
-[Pagina Principal:](README.md) 
-[Documentacion](docs/DOCUMENTACION.md) 
-[Politicas de seguridad:](security/SECURITY.md) 
-[Aplicacion de Prueba:](demo/DEMO.md) 
-[Documentacion de Clases:](docs/javadoc/index.html) 
+[Pagina Principal](README.md)
+
+[Documentacion](docs/DOCUMENTACION.md)
+
+[Politicas de seguridad](security/SECURITY.md)
+
+[Aplicacion de Prueba](demo/DEMO.md)
+
+[Documentacion de Clases](docs/javadoc/index.html) 
