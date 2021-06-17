@@ -41,9 +41,5 @@ en la ue se encuentre el sistema.
  - setDefaultPattern: establece el nuevo patron de formato de fehca por defecto.
  - getDateTimeFormatter: devuelve un objeto DatetimeFormatter a partir del patron por defecto.
  - validDate: establece si una cadena de caracteres es una fecha valida.
- 
-# Documentacion de las Clases
-
-[javadoc DateUtils](javadoc/index.html)
 
 
