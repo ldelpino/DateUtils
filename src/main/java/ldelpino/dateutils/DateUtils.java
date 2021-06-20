@@ -45,7 +45,6 @@ public class DateUtils {
      * Devuelve el objeto de formato de conversion de fechas.
      *
      * @return la instancia del objeto de formato.
-     * @throws IllegalArgumentException
      */
     public static DateTimeFormatter getDateTimeFormatter() {
         try {
