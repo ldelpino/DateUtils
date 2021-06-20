@@ -59,9 +59,3 @@ Por favor dirijase al archivo [LICENSE](LICENSE) para mas informacion sobre la l
 [Documentacion](docs/DOCUMENTACION.md)
 
 [Politicas de seguridad](SECURITY.md)
-
-<<<<<<< Updated upstream
-[Aplicacion de Prueba](demo/DEMO.md)
-=======
-[Aplicacion de Prueba](demo/DEMO.md) 
->>>>>>> Stashed changes
