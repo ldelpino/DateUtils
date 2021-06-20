@@ -16,11 +16,12 @@ La libreria se encuentra en su primera version, por tanto hasta la fecha no se h
 		
 ## Requerimientos del Sistema:
 
-<!--**Maven:**
-la libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1-->				
 **JDK:**
 1.8 o una version mas actual.
 La libreria fue realizada bajo la version 1.8.281 de la maquina virtual de Java.
+
+**Maven:**
+la libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1	
 
 **Memoria:**
 No existen requisitos minimos de memoria para su utilizacion.
@@ -45,9 +46,7 @@ de prueba propio o puede revisar la [documentacion](docs/DOCUMENTACION.md).-->
 		
 ## Utilizando DateUtils:
 		
-Para la utilizacion de la libreria solo es necesario incluirla dentro de las dependencias.		
-<!--Para la utilizacion de la libreria es necesario incluirla en las dependencias de las aplicaciones, ya sea utilizando 
-Apache Maven o no.-->
+Para la utilizacion de la libreria solo es necesario incluirla dentro de las dependencias.
 		
 ## Licencia:
 
@@ -61,4 +60,8 @@ Por favor dirijase al archivo [LICENSE](LICENSE) para mas informacion sobre la l
 
 [Politicas de seguridad](SECURITY.md)
 
+<<<<<<< Updated upstream
 [Aplicacion de Prueba](demo/DEMO.md)
+=======
+[Aplicacion de Prueba](demo/DEMO.md) 
+>>>>>>> Stashed changes

@@ -26,9 +26,8 @@ determinado las politicas de seguridad, ni las versiones soportadas.
 ## ¿Como puedo colaborar?
 
 Si usted desea colaborar en el desarrollo del proyecto puede hacerlo clonando el repositorio o extendiendo una nueva rama
-a partir del punto en el que desee comenzar [Pull Request]()y realizando los cambios que usted considere necesarios. 
-Le agredecemos de 
-antemano su participacion.
+a partir del punto en el que desee comenzar *Pull Request* y realizando los cambios que usted considere necesarios. 
+Le agredecemos de antemano su participacion.
 
 Lamentablemente por motivos de seguridad con respecto a otros autores sus modificaciones no estaran activas dentro del 
 repositorio, lo que significa que las nuevas versiones no necesariamente poseen esos cambios realizados, sin embargo,
