@@ -36,8 +36,8 @@ import static org.junit.Assert.*;
  */
 public class DateUtilsIT {
 
-    String datePattern = "dd/MM/yyyy";
-    String stringDateResult = "23/06/2021";
+    String datePattern = "dd/MM/yyyy-HH/mm/ss";
+    String stringDateResult = "22/06/2021-10/22/20";
 
     public DateUtilsIT() {
     }

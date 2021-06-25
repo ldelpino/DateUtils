@@ -33,7 +33,7 @@ public class DateUtils {
      * El patron por defecto para la conversion de fechas en cadenas de
      * caracteres.
      */
-    public static String DEFAULT_DATE_PATTERN = "dd/MM/yyyy";
+    public static String DEFAULT_DATE_PATTERN = "dd/MM/yyyy-HH/mm/ss";
 
     /**
      * El identificador de la zona horaria por defeto.

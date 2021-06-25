@@ -2,17 +2,33 @@
 
 ## ¿Que es DateUtils?
 									
-**DateUtils** es una libreria que incluye funcionalidades basicas de conversion de objetos de fechas.
-La libreria permite la conversion de objetos de fechas de una manera rapida y efectiva.
+**DateUtils** es una libreria que incluye funcionalidades basicas de conversion de objetos relacionados 
+con las fechas y las horas. La libreria permite la conversion de objetos en otros, asi como la conversion 
+de los mismos en cadenas de caracteres entendibles de una manera rapida y efectiva.
 		 
 ## Documentacion:
 									
-La documentacion original de la libreria se encuentra incluida dentro del proyecto, ademas puede ser 
-encontrada [aqui](docs/DOCUMENTACION.md).
+Para mas informacion sobre la documentacion de la libreria, dirijase [aqui](docs/DOCUMENTACION.md).
 		
 ## Ultimas modificaciones:
 									
-La libreria se encuentra en su primera version, por tanto hasta la fecha no se han realizados cambios.
+### Cambios Realizados
+
+- [x] Modificacion del tipo de dato java.time.LocalDate por java.time.LocalDateTime y de los metodos involucrados.
+- [x] Creacion y modificacion de los metodos de conversion y la conversion opuesta.
+- [x] Cambio del patron por defecto en la libreria.
+- [x] Creacion del campo o variable para establecer una zona horaria por defecto.
+- [x] Cambio en las nomenclaturas de los metodos de conversion.
+- [x] Funcionamiento de la libreria bajo la plataforma Apache Maven en su version 3.8.1
+- [x] Modificacion y actualizacion de las dependencias de las pruebas unitarias.
+
+### Cambios Pendientes
+
+- [ ] Certificar y firmar la libreria.
+- [ ] Creacion de metodos de conversion a partir de una zona horaria especifica.
+- [ ] Creacion de una aplicacion de prueba de lo metodos de conversion (*Demo*).
+- [ ] Creacion de metodos de conversion a cadenas de caracteres para los tipos de 
+datos *java.time.LocalDate* y *java.time.LocalTime*.
 		
 ## Requerimientos del Sistema:
 
@@ -21,7 +37,7 @@ La libreria se encuentra en su primera version, por tanto hasta la fecha no se h
 La libreria fue realizada bajo la version 1.8.281 de la maquina virtual de Java.
 
 **Maven:**
-la libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1	
+La libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1	
 
 **Memoria:**
 No existen requisitos minimos de memoria para su utilizacion.
@@ -36,13 +52,7 @@ Sistemas Operativos basados en Unix (Linux, Solaris o Mac OS X) y otros.
 		
 ## Probando DateUtils:
 		
-**DateUtils** posee todas las pruebas unitarias realizadas con *JUnit* en su version 4.12, todas satisfactorias.
-Si desea probar su aplicacion puede realizar una aplicacion de prueba o revisar la [documentacion](docs/DOCUMENTACION.md) 
-para mas informacion. 
-<!--Si desea realizar pruebas para verificar el funcionamiento de la libreria puede utilizar la aplicacion 
-**DateUtils Demo**, para mas indormacion dirijase a [Readme DateUtils Demo](demo/DEMO.md),
-aplicacion realizada para visualizar el funcionamiento de la libreria, tambien puede utilizar la libreria en un proyecto
-de prueba propio o puede revisar la [documentacion](docs/DOCUMENTACION.md).-->
+**DateUtils** posee todas las pruebas unitarias realizadas con *JUnit* en su version 4.13.1.
 		
 ## Utilizando DateUtils:
 		
