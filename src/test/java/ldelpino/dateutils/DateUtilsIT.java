@@ -16,197 +16,272 @@
  */
 package ldelpino.dateutils;
 
-import java.time.LocalDate;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
- * Clase de pruebas unitarias para la clase {@link ldelpino.date.util.DateUtils}
- * <p>
- * La clase de pruebas incluye todas las pruebas de los metodos estaticos
- * pertenecientes a la clase {@link ldelpino.date.util.DateUtils}.</p>
+ * Clase de Pruebas unitarias de la clase {@link ldelpino.dateutils.DateUtils}.
  *
  * @author Lazaro Cesar del Pino Olivera
- * @since jdk 1.8
- * @version 1.0
- * @see ldelpino.date.util.DateUtils
+ * @since JDK 1.8.281
+ * @version 1.5.0
  */
 public class DateUtilsIT {
 
+    String datePattern = "dd/MM/yyyy";
+    String stringDateResult = "23/06/2021";
+
+    public DateUtilsIT() {
+    }
+
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#format(java.time.LocalDate)} de la
-     * clase {@link ldelpino.date.util.DateUtils}
+     * Test of getDateTimeFormatter method, of class DateUtils.
      */
     @Test
-    public void testFormat_LocalDate() {
-        System.out.println("format");
-        LocalDate date = LocalDate.of(2021, 6, 12);
-        String expResult = "12/06/2021";
-        String result = DateUtils.format(date);
+    public void testGetDateTimeFormatter() {
+        System.out.println("getDateTimeFormatter");
+        DateTimeFormatter expResult = DateTimeFormatter.ofPattern(datePattern);
+        DateTimeFormatter result = DateUtils.getDateTimeFormatter();
         assertEquals(expResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#format(java.util.Calendar)} de la
-     * clase {@link ldelpino.date.util.DateUtils}
+     * Test of getDateFormat method, of class DateUtils.
      */
     @Test
-    public void testFormat_Calendar() {
-        System.out.println("format");
-        Calendar calendar = DateUtils.convertFromLocalDateToCalendar(LocalDate.of(2021, 6, 12));
-        String expResult = "12/06/2021";
-        String result = DateUtils.format(calendar);
+    public void testGetDateFormat() {
+        System.out.println("getDateFormat");
+        DateFormat expResult = new SimpleDateFormat(datePattern, DateUtils.getDateTimeFormatter().getLocale());
+        DateFormat result = DateUtils.getDateFormat();
         assertEquals(expResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#format(java.time.LocalDate)} de la
-     * clase {@link ldelpino.date.util.DateUtils}
+     * Test of format method, of class DateUtils.
      */
     @Test
-    public void testFormat_LocalDate_String() {
+    public void testFormat_LocalDateTime_String() {
         System.out.println("format");
-        LocalDate date = LocalDate.of(2021, 6, 12);
-        String datePattern = DateUtils.DEFAULT_DATE_PATTERN;
-        String expResult = "12/06/2021";
+        LocalDateTime date = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
         String result = DateUtils.format(date, datePattern);
-        assertEquals(expResult, result);
+        assertEquals(stringDateResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#format(java.util.Calendar)} de la
-     * clase {@link ldelpino.date.util.DateUtils}
+     * Test of format method, of class DateUtils.
+     */
+    @Test
+    public void testFormat_Date_String() {
+        System.out.println("format");
+        Date date = new Date(121, 5, 22);
+        String result = DateUtils.format(date, datePattern);
+        assertEquals(stringDateResult, result);
+    }
+
+    /**
+     * Test of format method, of class DateUtils.
      */
     @Test
     public void testFormat_Calendar_String() {
         System.out.println("format");
-        Calendar calendar = DateUtils.convertFromLocalDateToCalendar(LocalDate.of(2021, 6, 12));
-        String datePattern = DateUtils.DEFAULT_DATE_PATTERN;
-        String expResult = "12/06/2021";
-        String result = DateUtils.format(calendar, datePattern);
-        assertEquals(expResult, result);
+        Calendar date = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        String result = DateUtils.format(date, datePattern);
+        assertEquals(stringDateResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#parse(java.lang.String)} de la clase
-     * {@link ldelpino.date.util.DateUtils}
+     * Test of format method, of class DateUtils.
      */
     @Test
-    public void testParse_String() {
-        System.out.println("parse");
-        String dateString = "12/06/2021";
-        LocalDate expResult = LocalDate.of(2021, 6, 12);
-        LocalDate result = DateUtils.parse(dateString);
-        assertEquals(expResult, result);
+    public void testFormat_LocalDateTime() {
+        System.out.println("format");
+        LocalDateTime date = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        String result = DateUtils.format(date);
+        assertEquals(stringDateResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#parse(java.lang.String, java.lang.String)}
-     * de la clase {@link ldelpino.date.util.DateUtils}
+     * Test of format method, of class DateUtils.
      */
     @Test
-    public void testParse_String_String() {
-        System.out.println("parse");
-        String dateString = "12/06/2021";
-        String datePattern = DateUtils.DEFAULT_DATE_PATTERN;
-        LocalDate expResult = LocalDate.of(2021, 6, 12);
-        LocalDate result = DateUtils.parse(dateString, datePattern);
+    public void testFormat_Date() {
+        System.out.println("format");
+        Date date = new Date(121, 5, 22);
+        String result = DateUtils.format(date);
+        assertEquals(stringDateResult, result);
+    }
+
+    /**
+     * Test of format method, of class DateUtils.
+     */
+    @Test
+    public void testFormat_Calendar() {
+        System.out.println("format");
+        Calendar date = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        String result = DateUtils.format(date);
+        assertEquals(stringDateResult, result);
+    }
+
+    /**
+     * Test of parseToLocalDateTime method, of class DateUtils.
+     */
+    @Test
+    public void testParseToLocalDateTime_String_String() {
+        System.out.println("parseToLocalDateTime");
+        LocalDateTime expResult = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        LocalDateTime result = DateUtils.parseToLocalDateTime(stringDateResult, datePattern);
         assertEquals(expResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#validDate(java.lang.String, java.lang.String)}
-     * de la clase {@link ldelpino.date.util.DateUtils}
+     * Test of parseToDate method, of class DateUtils.
+     */
+    @Test
+    public void testParseToDate_String_String() {
+        System.out.println("parseToDate");
+        Date expResult = new Date(121, 5, 22);
+        Date result = DateUtils.parseToDate(stringDateResult, datePattern);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of parseToCalendar method, of class DateUtils.
+     */
+    @Test
+    public void testParseToCalendar_String_String() {
+        System.out.println("parseToCalendar");
+        Calendar expResult = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        Calendar result = DateUtils.parseToCalendar(stringDateResult, datePattern);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of parseToLocalDateTime method, of class DateUtils.
+     */
+    @Test
+    public void testParseToLocalDateTime_String() {
+        System.out.println("parseToLocalDateTime");
+        LocalDateTime expResult = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        LocalDateTime result = DateUtils.parseToLocalDateTime(stringDateResult);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of parseToDate method, of class DateUtils.
+     */
+    @Test
+    public void testParseToDate_String() {
+        System.out.println("parseToDate");
+        Date expResult = new Date(121, 5, 22);
+        Date result = DateUtils.parseToDate(stringDateResult);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of parseToCalendar method, of class DateUtils.
+     */
+    @Test
+    public void testParseToCalendar_String() {
+        System.out.println("parseToCalendar");
+        Calendar expResult = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        Calendar result = DateUtils.parseToCalendar(stringDateResult);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of validDate method, of class DateUtils.
      */
     @Test
     public void testValidDate_String_String() {
         System.out.println("validDate");
-        String dateString = "12/06/2021";
-        String datePattern = DateUtils.DEFAULT_DATE_PATTERN;
         boolean expResult = true;
-        boolean result = DateUtils.validDate(dateString, datePattern);
+        boolean result = DateUtils.validDate(stringDateResult, datePattern);
         assertEquals(expResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#validDate(java.lang.String)} de la
-     * clase {@link ldelpino.date.util.DateUtils}
+     * Test of validDate method, of class DateUtils.
      */
     @Test
     public void testValidDate_String() {
         System.out.println("validDate");
-        String dateString = "12/06/2021";
         boolean expResult = true;
-        boolean result = DateUtils.validDate(dateString);
+        boolean result = DateUtils.validDate(stringDateResult);
         assertEquals(expResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#convertFromLocalDateToDate(java.time.LocalDate)}
-     * de la clase {@link ldelpino.date.util.DateUtils}
+     * Test of convertFromLocalDateTimeToCalendar method, of class DateUtils.
      */
     @Test
-    public void testConvertFromLocalDateToDate() {
-        System.out.println("convertFromLocalDateToDate");
-        LocalDate localDate = LocalDate.of(2021, 6, 12);
-        Date expResult = new Date(121, 5, 12);
-        Date result = DateUtils.convertFromLocalDateToDate(localDate);
+    public void testConvertFromLocalDateTimeToCalendar() {
+        System.out.println("convertFromLocalDateTimeToCalendar");
+        LocalDateTime localDateTime = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        Calendar expResult = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        Calendar result = DateUtils.convertFromLocalDateTimeToCalendar(localDateTime);
         assertEquals(expResult, result);
     }
 
     /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#convertFromDateToLocalDate(java.util.Date)}
-     * de la clase {@link ldelpino.date.util.DateUtils}
-     */
-    @Test
-    public void testConvertFromDateToLocalDate() {
-        System.out.println("convertFromDateToLocalDate");
-        Date date = new Date(121, 5, 12);
-        LocalDate expResult = LocalDate.of(2021, 6, 12);
-        LocalDate result = DateUtils.convertFromDateToLocalDate(date);
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#convertFromLocalDateToCalndar(java.time.LocalDate)}
-     * de la clase {@link ldelpino.date.util.DateUtils}
-     */
-    @Test
-    public void testConvertFromLocalDateToCalendar() {
-        System.out.println("convertFromLocalDateToCalendar");
-        LocalDate localDate = LocalDate.of(2021, 6, 12);
-        Calendar expResult = GregorianCalendar.from(LocalDate.of(2021, 6, 12).atStartOfDay(ZoneId.systemDefault()));
-        Calendar result = DateUtils.convertFromLocalDateToCalendar(localDate);
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Prueba del metodo
-     * {@link ldelpino.date.util.DateUtils#convertFromCalndarToLocalDate(java.util.Calendar)}
-     * de la clase {@link ldelpino.date.util.DateUtils}
+     * Test of convertFromCalendarToLocalDate method, of class DateUtils.
      */
     @Test
     public void testConvertFromCalendarToLocalDate() {
         System.out.println("convertFromCalendarToLocalDate");
-        Calendar calendar = new GregorianCalendar(2021, 5, 12);
-        LocalDate expResult = LocalDate.of(2021, 6, 12);
-        LocalDate result = DateUtils.convertFromCalendarToLocalDate(calendar);
+        Calendar calendar = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        LocalDateTime expResult = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        LocalDateTime result = DateUtils.convertFromCalendarToLocalDate(calendar);
         assertEquals(expResult, result);
     }
 
+    /**
+     * Test of convertFromLocalDateToDate method, of class DateUtils.
+     */
+    @Test
+    public void testConvertFromLocalDateToDate() {
+        System.out.println("convertFromLocalDateToDate");
+        LocalDateTime localDateTime = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        Date expResult = new Date(121, 5, 22);
+        Date result = DateUtils.convertFromLocalDateToDate(localDateTime);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of convertFromDateToLocalDate method, of class DateUtils.
+     */
+    @Test
+    public void testConvertFromDateToLocalDate() {
+        System.out.println("convertFromDateToLocalDate");
+        Date date = new Date(121, 5, 22);
+        LocalDateTime expResult = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
+        LocalDateTime result = DateUtils.convertFromDateToLocalDate(date);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of convertFromDateToCalendar method, of class DateUtils.
+     */
+    @Test
+    public void testConvertFromDateToCalendar() {
+        System.out.println("convertFromDateToCalendar");
+        Date date = new Date(121, 5, 22);
+        Calendar expResult = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
+                atZone(ZoneId.systemDefault()));
+        Calendar result = DateUtils.convertFromDateToCalendar(date);
+        assertEquals(expResult, result);
+    }
 }

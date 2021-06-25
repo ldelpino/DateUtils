@@ -10,10 +10,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <name>Date-Utils-1.0.0</name>
+    <name>Date-Utils-1.5.0</name>
     <description>DateUtils es una libreria que permite la conversion de objetos pertenecientes a la 
-API de Java relacionados con fechas y horas. Admas incluye la posibilidad de convertir
-objetos de fechas a cadecas de caracteres y viceversa.</description>
+API de Java relacionados con fechas y horas. Ademas incluye la posibilidad de convertir
+objetos de fechas y horas a cadenas de caracteres y viceversa.</description>
     <build>
         <plugins>
             <plugin>
