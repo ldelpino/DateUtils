@@ -18,7 +18,9 @@ package ldelpino.dateutils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -32,12 +34,12 @@ import static org.junit.Assert.*;
  *
  * @author Lazaro Cesar del Pino Olivera
  * @since JDK 1.8.281
- * @version 1.5.0
+ * @version 1.5.1
  */
 public class DateUtilsIT {
 
-    String datePattern = "dd/MM/yyyy-HH/mm/ss";
-    String stringDateResult = "22/06/2021-10/22/20";
+    private final String datePattern = "dd/MM/yyyy-HH/mm/ss";
+    private final String stringDateResult = "22/06/2021-10/22/20";
 
     public DateUtilsIT() {
     }
@@ -50,7 +52,7 @@ public class DateUtilsIT {
         System.out.println("getDateTimeFormatter");
         DateTimeFormatter expResult = DateTimeFormatter.ofPattern(datePattern);
         DateTimeFormatter result = DateUtils.getDateTimeFormatter();
-        assertEquals(expResult, result);
+        assertEquals(expResult.toString(), result.toString());
     }
 
     /**
@@ -81,7 +83,7 @@ public class DateUtilsIT {
     @Test
     public void testFormat_Date_String() {
         System.out.println("format");
-        Date date = new Date(121, 5, 22);
+        Date date = new Date(121, 5, 22, 10, 22, 20);
         String result = DateUtils.format(date, datePattern);
         assertEquals(stringDateResult, result);
     }
@@ -110,12 +112,36 @@ public class DateUtilsIT {
     }
 
     /**
+     *
+     */
+    @Test
+    public void testFormat_LocalDate() {
+        System.out.println("format");
+        LocalDate date = LocalDate.of(2021, 6, 22);
+        String expResult = "22/06/2021";
+        String result = DateUtils.format(date);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testFormat_LocalTime() {
+        System.out.println("format");
+        LocalTime localTime = LocalTime.of(10, 22, 20);
+        String expResult = "10/22/20";
+        String result = DateUtils.format(localTime);
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of format method, of class DateUtils.
      */
     @Test
     public void testFormat_Date() {
         System.out.println("format");
-        Date date = new Date(121, 5, 22);
+        Date date = new Date(121, 5, 22, 10, 22, 20);
         String result = DateUtils.format(date);
         assertEquals(stringDateResult, result);
     }
@@ -144,12 +170,38 @@ public class DateUtilsIT {
     }
 
     /**
+     * Test of parseToLocalDateTime method, of class DateUtils.
+     */
+    @Test
+    public void testParseToLocalDate_String_String() {
+        System.out.println("parseToLocalDate");
+        LocalDate expResult = LocalDate.of(2021, 6, 22);
+        String dateResult = "22/06/2021";
+        String dateFormat = "dd/MM/yyyy";
+        LocalDate result = DateUtils.parseToLocalDate(dateResult, dateFormat);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of parseToLocalDateTime method, of class DateUtils.
+     */
+    @Test
+    public void testParseToLocalTime_String_String() {
+        System.out.println("parseToLocalTime");
+        LocalTime expResult = LocalTime.of(10, 22, 20);
+        String dateResult = "10/22/20";
+        String dateFormat = "HH/mm/ss";
+        LocalTime result = DateUtils.parseToLocalTime(dateResult, dateFormat);
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of parseToDate method, of class DateUtils.
      */
     @Test
     public void testParseToDate_String_String() {
         System.out.println("parseToDate");
-        Date expResult = new Date(121, 5, 22);
+        Date expResult = new Date(121, 5, 22, 10, 22, 20);
         Date result = DateUtils.parseToDate(stringDateResult, datePattern);
         assertEquals(expResult, result);
     }
@@ -178,12 +230,36 @@ public class DateUtilsIT {
     }
 
     /**
+     * Test of parseToLocalDateTime method, of class DateUtils.
+     */
+    @Test
+    public void testParseToLocalDate_String() {
+        System.out.println("parseToLocalDate");
+        LocalDate expResult = LocalDate.of(2021, 6, 22);
+        String dateResult = "22/06/2021";
+        LocalDate result = DateUtils.parseToLocalDate(dateResult);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of parseToLocalDateTime method, of class DateUtils.
+     */
+    @Test
+    public void testParseToLocalTime_String() {
+        System.out.println("parseToLocalTime");
+        LocalTime expResult = LocalTime.of(10, 22, 20);
+        String timeResult = "10/22/20";
+        LocalTime result = DateUtils.parseToLocalTime(timeResult);
+        assertEquals(expResult, result);
+    }
+
+    /**
      * Test of parseToDate method, of class DateUtils.
      */
     @Test
     public void testParseToDate_String() {
         System.out.println("parseToDate");
-        Date expResult = new Date(121, 5, 22);
+        Date expResult = new Date(121, 5, 22, 10, 22, 20);
         Date result = DateUtils.parseToDate(stringDateResult);
         assertEquals(expResult, result);
     }
@@ -255,7 +331,7 @@ public class DateUtilsIT {
     public void testConvertFromLocalDateToDate() {
         System.out.println("convertFromLocalDateToDate");
         LocalDateTime localDateTime = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
-        Date expResult = new Date(121, 5, 22);
+        Date expResult = new Date(121, 5, 22, 10, 22, 20);
         Date result = DateUtils.convertFromLocalDateToDate(localDateTime);
         assertEquals(expResult, result);
     }
@@ -266,7 +342,7 @@ public class DateUtilsIT {
     @Test
     public void testConvertFromDateToLocalDate() {
         System.out.println("convertFromDateToLocalDate");
-        Date date = new Date(121, 5, 22);
+        Date date = new Date(121, 5, 22, 10, 22, 20);
         LocalDateTime expResult = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
         LocalDateTime result = DateUtils.convertFromDateToLocalDate(date);
         assertEquals(expResult, result);
@@ -278,7 +354,7 @@ public class DateUtilsIT {
     @Test
     public void testConvertFromDateToCalendar() {
         System.out.println("convertFromDateToCalendar");
-        Date date = new Date(121, 5, 22);
+        Date date = new Date(121, 5, 22, 10, 22, 20);
         Calendar expResult = GregorianCalendar.from(LocalDateTime.of(2021, 6, 22, 10, 22, 20).
                 atZone(ZoneId.systemDefault()));
         Calendar result = DateUtils.convertFromDateToCalendar(date);

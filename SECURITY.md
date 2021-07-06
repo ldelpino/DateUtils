@@ -2,34 +2,20 @@
 
 ## Permisos
 
-La libreria ha sido creada y desarrollada bajo la Licencia Publica General GPL en su version 3.0, por lo cual se establecen
-todas reglas establecidas en la misma.
-
-Se permite la copia y distribucion, asi como realizar modificaciones necesarias, siempre y cuando se mantengan a los autores 
-intelectuales del proyecto.
+La libreria ha sido creada y desarrollada bajo la (Licencia Publica General GPL en su version 3.0)[LICENSE], 
+por lo cual se establecen todas reglas establecidas en la misma.
 
 ## versiones soportadas actualemnte
 
-Actualmente el proyecto se encuentra en su fase 
-inicial de desarrollo, por lo cual no se ha
-determinado las politicas de seguridad, ni las versiones soportadas.
-
-<!--
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
--->
+| 1.0.0   | :white_check_mark: |
+| 1.5.0   | :x:                |
+| 1.0.1   | :white_check_mark: |
 
-## ¿Como puedo colaborar?
-
-Si usted desea colaborar en el desarrollo del proyecto puede hacerlo clonando el repositorio o extendiendo una nueva rama
-a partir del punto en el que desee comenzar *Pull Request* y realizando los cambios que usted considere necesarios. 
-Le agredecemos de antemano su participacion.
-
-Lamentablemente por motivos de seguridad con respecto a otros autores sus modificaciones no estaran activas dentro del 
-repositorio, lo que significa que las nuevas versiones no necesariamente poseen esos cambios realizados, sin embargo,
-si sus cambios vienen bien con nuestro modelo de negocios, nosotros lo contactaremos para que forme parte de esta gran 
-familia de colaboradores, siempre manteniedo esos cambios bajo su autoria.
+La version 1.0.0 es la primera version oficial de la libreria, la vesion es funcional y no posee errores conocidos.
+la primera version ha sido sustituida oficialmente por la version 1.0.1.
+La version 1.5.0 fue una version de prueba sobre la libreria, actualmente se encuenta en desuso y no se recomienda
+se utilizada.
+La version 1.0.1 es la segunda version oficial de la libreria ha sido generada a partir de la version 1.0.0, es la 
+version actual recomendada. 
