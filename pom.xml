@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ldelpino</groupId>
     <artifactId>dateUtils</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <name>DateUtils</name>
+    <name>${project.groupId}-${project.artifactId}-${project.version}</name>
     <description>DateUtils es una libreria que permite la conversion de objetos pertenecientes a la 
         API de Java relacionados con fechas y horas. Ademas incluye la posibilidad de convertir
         objetos de fechas y horas a cadenas de caracteres y viceversa.</description>

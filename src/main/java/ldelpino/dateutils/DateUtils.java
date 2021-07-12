@@ -59,7 +59,7 @@ import java.util.GregorianCalendar;
  *
  *
  * @author Lazaro Cesar del Pino Olivera
- * @since JDK 1.8.281
+ * @since jdk-16.0.1
  * @version 1.5.1
  */
 public class DateUtils {
