@@ -33,7 +33,7 @@ import static org.junit.Assert.*;
 /**
  * Clase de Pruebas unitarias de la clase {@link io.github.ldelpino.DateUtils}.
  *
- * @author Lazaro Cesar del Pino Olivera <lazaro.delpino@yahoo.com>
+ * @author Lazaro Cesar del Pino Olivera <elrojo960905@gmail.com>
  * @since JDK 16.0.1
  * @version 1.0.1
  */

@@ -74,7 +74,7 @@ import java.util.GregorianCalendar;
  * conversion.</p>
  *
  *
- * @author Lazaro Cesar del Pino Olivera <lazaro.delpino@yahoo.com>
+ * @author Lazaro Cesar del Pino Olivera
  * @since jdk-16.0.1
  * @version 1.0.1
  */
