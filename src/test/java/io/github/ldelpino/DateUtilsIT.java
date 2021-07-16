@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 EL ROJO
+ * Copyright (C) 2021 Lazaro Cesar del Pino Olivera <lazaro.delpino@yahoo.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ldelpino.dateutils;
+package io.github.ldelpino;
 
+import io.github.ldelpino.DateUtils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -30,11 +31,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Clase de Pruebas unitarias de la clase {@link ldelpino.dateutils.DateUtils}.
+ * Clase de Pruebas unitarias de la clase {@link io.github.ldelpino.DateUtils}.
  *
- * @author Lazaro Cesar del Pino Olivera
- * @since JDK 1.8.281
- * @version 1.5.1
+ * @author Lazaro Cesar del Pino Olivera <lazaro.delpino@yahoo.com>
+ * @since JDK 16.0.1
+ * @version 1.0.1
  */
 public class DateUtilsIT {
 
@@ -112,7 +113,7 @@ public class DateUtilsIT {
     }
 
     /**
-     *
+     * Test of format method, of class DateUtils.
      */
     @Test
     public void testFormat_LocalDate() {
@@ -124,7 +125,7 @@ public class DateUtilsIT {
     }
 
     /**
-     *
+     * Test of format method, of class DateUtils.
      */
     @Test
     public void testFormat_LocalTime() {
