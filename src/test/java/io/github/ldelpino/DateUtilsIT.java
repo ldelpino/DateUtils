@@ -15,7 +15,6 @@
  */
 package io.github.ldelpino;
 
-import io.github.ldelpino.DateUtils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -32,9 +31,9 @@ import static org.junit.Assert.*;
 /**
  * Clase de Pruebas unitarias de la clase {@link io.github.ldelpino.DateUtils}.
  *
- * @author Lazaro Cesar del Pino Olivera <elrojo960905@gmail.com>
+ * @author Lazaro Cesar del Pino Olivera
  * @since JDK 16.0.1
- * @version 1.0.1
+ * @version 1.0.2-SNAPSHOT
  */
 public class DateUtilsIT {
 

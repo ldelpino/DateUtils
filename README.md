@@ -12,21 +12,9 @@ de los mismos en cadenas de caracteres entendibles de una manera rapida y efecti
 									
 Para mas informacion sobre la documentacion de la libreria, dirijase [aqui](docs/index.md).
 		
-## Ultimas modificaciones
+## Modificaciones
 									
-### Cambios Realizados
-
-- [x] Modificacion del tipo de dato java.time.LocalDate por java.time.LocalDateTime y los metodos involucrados.
-- [x] Creacion y modificacion de los metodos de conversion y su correspondiente conversion opuesta.
-- [x] Cambio del patron por defecto en la libreria de solo fechas hacia un patron de fechasy horas.
-- [x] Creacion del campo o variable para establecer una zona horaria por defecto.
-- [x] Cambio en las nomenclaturas de los metodos de conversion.
-- [x] Funcionamiento de la libreria bajo la plataforma Apache Maven en su version 3.8.1
-- [x] Modificacion y actualizacion de las dependencias de las pruebas unitarias.
-- [x] Inclusion de los metodos de conversion para java.time.LocalDate y java.time.LocalTime.
-- [x] Certificar y firmar la libreria.
-
-### Cambios Pendientes
+### Cambios En Proceso
 
 - [ ] Creacion de las paginas de Github en el repositorio (Documentacion).
 - [ ] Creacion de las paginas de tipo Wiki en el repositorio (Documentacion).

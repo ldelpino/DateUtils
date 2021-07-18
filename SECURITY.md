@@ -4,12 +4,12 @@ Contruccion de la version 1.0.2 de la libreria *En proceso....*
 
 ## Permisos
 
-La libreria ha sido creada y desarrollada bajo la (Apache License v2.0)[LICENSE], 
+La libreria ha sido creada y desarrollada bajo la licencia (GNU Apache License v2.0)[LICENSE], 
 por lo cual se establecen todas reglas establecidas en la misma.
 
-## versiones soportadas actualemnte
+## versiones soportadas
 
-| Version | Supported          |
+| Version | Supported          | 
 | ------- | ------------------ |
 | 1.0.0   | :white_check_mark: |
 | 1.5.0   | :x:                |

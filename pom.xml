@@ -28,8 +28,8 @@
     </developers>
     <licenses>
         <license>
-            <name>General Public License v3.0</name>
-            <url>https://www.gnu.org/licenses/</url>
+            <name>Apache License v2.0</name>
+            <url>http://www.apache.org/licenses/</url>
         </license>
     </licenses>
     <scm>

@@ -75,7 +75,7 @@ import java.util.GregorianCalendar;
  *
  * @author Lazaro Cesar del Pino Olivera
  * @since jdk-16.0.1
- * @version 1.0.1
+ * @version 1.0.2-SNAPSHOT
  */
 public class DateUtils {
 
@@ -314,6 +314,14 @@ public class DateUtils {
         return null;
     }
 
+    /**
+     * Convierte un objeto de tipo {@link java.time.LocalTime} en una cadena de
+     * caracteres a partir del patron por defecto.
+     *
+     * @param localTime la fecha a convertir en cadena de caracteres.
+     * @return la cadena de caracteres convertida a partir del patron por
+     * defecto, de lo contrario devuelve <strong>null</strong>.
+     */
     public static String format(LocalTime localTime) {
         return format(localTime, DEFAULT_TIME_PATTERN);
     }
