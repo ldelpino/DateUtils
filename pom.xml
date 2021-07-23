@@ -20,7 +20,7 @@
         <developer>
             <id>ldelpino</id>
             <name>Lazaro Cesar del Pino Olivera</name>
-            <email>lazaro.delpino@yahoo.com</email>
+            <email>lazaro.delpino.olivera@gmail.com</email>
             <roles>
                 <role>Development</role>
             </roles>
@@ -135,6 +135,7 @@
                         <phase>verify</phase>
                         <goals>
                             <goal>sign</goal>
+                            <goal>deploy</goal>
                         </goals>
                         <configuration>
                             <keyname>${gpg.keyname}</keyname>
