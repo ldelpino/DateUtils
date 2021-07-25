@@ -98,6 +98,11 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.0.0-M1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jarsigner-plugin</artifactId>
                 <version>1.4</version>
                 <configuration>
@@ -135,8 +140,6 @@
                         <phase>verify</phase>
                         <goals>
                             <goal>sign</goal>
-                            <goal>install</goal>
-                            <goal>deploy</goal>
                         </goals>
                         <configuration>
                             <keyname>${gpg.keyname}</keyname>
