@@ -16,9 +16,8 @@ Para mas informacion sobre la documentacion de la libreria, dirijase [aqui](docs
 									
 ### Cambios En Proceso
 
-- [ ] Creacion de las paginas de Github en el repositorio (Documentacion).
 - [ ] Creacion de las paginas de tipo Wiki en el repositorio (Documentacion).
-- [ ] Subir el proyecto en el repositorio central de [Apache Maven](http://repo2.maven.apache.org/) .
+- [ ] Subir el proyecto en el repositorio central de [Apache Maven](http://repo2.maven.apache.org/).
 - [ ] Creacion de metodos de conversion a partir de una zona horaria especifica.
 - [ ] Creacion de una aplicacion de prueba de lo metodos de conversion (Demo).
 		
@@ -50,5 +49,5 @@ de los metodos contenidos.
 		
 ## Licencia:
 
-La libreria ha sido realizada bajo la Apache License v2.0. Para mas informaion dirijase 
+La libreria ha sido realizada bajo la Apache License v2.0. Para mas informacion dirijase 
 al archivo [LICENSE](LICENSE).
