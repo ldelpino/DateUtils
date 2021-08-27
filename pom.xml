@@ -2,59 +2,66 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.ldelpino.libs</groupId>
     <artifactId>date_utils</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
+    <inceptionYear>2021</inceptionYear>
+    <name>${project.groupId}-${project.artifactId}-${project.version}</name>
+    <description>Libreria que permite la conversion de objetos pertenecientes a la 
+        API de Java relacionados con fechas y horas. Incluye la posibilidad de convertir
+        objetos de fechas y horas a cadenas de caracteres y viceversa.</description>
+        
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-    </properties>
-    <name>${project.groupId}-${project.artifactId}-${project.version}</name>
-    <description>DateUtils es una libreria que permite la conversion de objetos pertenecientes a la 
-        API de Java relacionados con fechas y horas. Ademas incluye la posibilidad de convertir
-        objetos de fechas y horas a cadenas de caracteres y viceversa.</description>
+    </properties>    
+    
     <developers>
         <developer>
             <id>ldelpino</id>
             <name>Lazaro Cesar del Pino Olivera</name>
             <email>lazaro.delpino.olivera@gmail.com</email>
+            <url>https://github.com/ldelpino</url>
             <roles>
                 <role>Development</role>
             </roles>
         </developer>
     </developers>
+    
     <licenses>
         <license>
-            <name>Apache License v2.0</name>
-            <url>http://www.apache.org/licenses/</url>
+            <name>The Apache License, Version 2.0</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+    
     <scm>
-        <connection>https://github.com/ldelpino/DateUtils</connection>
-        <developerConnection>scm:git:git://github.com/ldelpino/DateUtils.git</developerConnection>
+        <connection>scm:git:git://github.com/ldelpino/DateUtils.git</connection>
+        <developerConnection>scm:git:ssh://github.com/ldelpino/DateUtils.git</developerConnection>
         <url>https://github.com/ldelpino/DateUtils</url>
     </scm>
+    
     <build>
         <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
-        <plugins>
+        
+        <plugins>        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.8.1</version>
                 <configuration>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.3.0</version>
-                <configuration>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
@@ -64,10 +71,11 @@
                     </execution>
                 </executions>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.2.0</version>
                 <configuration>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
@@ -80,10 +88,11 @@
                     </execution>
                 </executions>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.0.4</version>
+                <version>3.2.1</version>
                 <configuration>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
@@ -91,49 +100,22 @@
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>3.0.0-M1</version>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jarsigner-plugin</artifactId>
-                <version>1.4</version>
-                <configuration>
-                    <showDeprecation>true</showDeprecation>
-                    <keystore>src/main/resources/dateutils-101.jks</keystore>
-                    <alias>dateutils-1.0.1</alias>
-                    <storepass>Lazaro96.</storepass>
-                    <keypass>Lazaro96.</keypass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>sign</id>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>verify</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <configuration>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -148,24 +130,42 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+    
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <showDeprecation>true</showDeprecation>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-                <extensions>true</extensions>
+                </configuration> 
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
+                <version>3.0.0-M4</version>
                 <configuration>
-                    <showDeprecation>true</showDeprecation>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
@@ -174,6 +174,7 @@
             </plugin>
         </plugins>
     </build>
+    
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -184,34 +185,39 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+    
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.1</version>
+            <version>5.8.0-M1</version>
             <scope>test</scope>
             <type>jar</type>
         </dependency>
+        
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.3.1</version>
+            <version>5.8.0-M1</version>
             <scope>test</scope>
         </dependency>
+        
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.3.1</version>
+            <version>5.8.0-M1</version>
             <scope>test</scope>
         </dependency>
+        
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
             <type>jar</type>
         </dependency>
     </dependencies>
+    
     <reporting>
         <plugins>
             <plugin>

@@ -75,7 +75,7 @@ import java.util.GregorianCalendar;
  *
  * @author Lazaro Cesar del Pino Olivera
  * @since jdk-16.0.1
- * @version 1.0.2-SNAPSHOT
+ * @version 1.0.2
  */
 public class DateUtils {
 

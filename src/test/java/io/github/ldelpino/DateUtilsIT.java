@@ -80,6 +80,7 @@ public class DateUtilsIT {
      * Test of format method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testFormat_Date_String() {
         System.out.println("format");
         Date date = new Date(121, 5, 22, 10, 22, 20);
@@ -138,6 +139,7 @@ public class DateUtilsIT {
      * Test of format method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testFormat_Date() {
         System.out.println("format");
         Date date = new Date(121, 5, 22, 10, 22, 20);
@@ -198,6 +200,7 @@ public class DateUtilsIT {
      * Test of parseToDate method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testParseToDate_String_String() {
         System.out.println("parseToDate");
         Date expResult = new Date(121, 5, 22, 10, 22, 20);
@@ -256,6 +259,7 @@ public class DateUtilsIT {
      * Test of parseToDate method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testParseToDate_String() {
         System.out.println("parseToDate");
         Date expResult = new Date(121, 5, 22, 10, 22, 20);
@@ -327,6 +331,7 @@ public class DateUtilsIT {
      * Test of convertFromLocalDateToDate method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testConvertFromLocalDateToDate() {
         System.out.println("convertFromLocalDateToDate");
         LocalDateTime localDateTime = LocalDateTime.of(2021, 6, 22, 10, 22, 20);
@@ -339,6 +344,7 @@ public class DateUtilsIT {
      * Test of convertFromDateToLocalDate method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testConvertFromDateToLocalDate() {
         System.out.println("convertFromDateToLocalDate");
         Date date = new Date(121, 5, 22, 10, 22, 20);
@@ -351,6 +357,7 @@ public class DateUtilsIT {
      * Test of convertFromDateToCalendar method, of class DateUtils.
      */
     @Test
+    @SuppressWarnings("deprecation")
     public void testConvertFromDateToCalendar() {
         System.out.println("convertFromDateToCalendar");
         Date date = new Date(121, 5, 22, 10, 22, 20);
