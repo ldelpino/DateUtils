@@ -1,7 +1,5 @@
  # Documentacion
 
- Contruccion de la version 1.0.2 de la libreria *En proceso....*
-
  ## Conociendo DateUtils
 
  **DateUtils** es una libreria creada con el objetivo de poder convertir objetos pertenecientes a la API de Java 

@@ -12,34 +12,14 @@ de los mismos en cadenas de caracteres entendibles de una manera rapida y efecti
 									
 Para mas informacion sobre la documentacion de la libreria, dirijase [aqui](docs/index.md).
 		
-## Modificaciones
-									
-### Cambios En Proceso
-
-- [ ] Creacion de las paginas de tipo Wiki en el repositorio (Documentacion).
-- [ ] Subir el proyecto en el repositorio central de [Apache Maven](http://repo2.maven.apache.org/).
-- [ ] Creacion de metodos de conversion a partir de una zona horaria especifica.
-- [ ] Creacion de una aplicacion de prueba de lo metodos de conversion (Demo).
-		
-## Requerimientos del Sistema:
+## Requerimientos:
 
 **JDK:**
-16 o una version mas actual.
-La libreria fue realizada bajo la version 16.0.1 de la maquina virtual de Java.
+11 o una version mas actual.
+La libreria fue realizada bajo la version 16.0.1 de la maquina virtual de Java con la version de compilacion 11.
 
 **Maven:**
-La libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1	
-
-**Memoria:**
-No existen requisitos minimos de memoria para su utilizacion.
-
-**Espacio en disco:**
-No existen requisitos minimos en cuanto a capacidad de almacenamiento.
-
-**Sistemas Operativos:**
-Cualquier Sistema Operativo compatible com la ejecucion de aplicaciones realizadas bajo Java.
-Windows 2000 o versiones mas actuales.
-Sistemas Operativos basados en Unix (Linux, Solaris o Mac OS X) y otros.
+La libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1
 		
 ## Pruebas sobre DateUtils:
 		
