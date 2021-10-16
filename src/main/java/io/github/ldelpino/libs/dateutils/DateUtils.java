@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.ldelpino;
+package io.github.ldelpino.libs.dateutils;
 
 import java.text.DateFormat;
 import java.text.ParseException;
