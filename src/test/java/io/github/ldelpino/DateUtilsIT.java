@@ -34,7 +34,7 @@ import org.junit.Test;
  *
  * @author Lazaro Cesar del Pino Olivera
  * @since JDK 16.0.1
- * @version 1.0.2-SNAPSHOT
+ * @version 1.0-SNAPSHOT
  */
 public class DateUtilsIT {
 

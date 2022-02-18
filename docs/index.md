@@ -103,7 +103,7 @@
  
  ## Metodologia de uso de la libreria
 
- - Hacer uso de la clase DateUtils y no crear objetos de esta, hasta la version, la clase solo posee metodos 
+ - Hacer uso de la clase DateUtils y no crear objetos de esta, hasta la actual version, la clase solo posee metodos 
  estaticos, por lo cual no es necesario la creacion de objetos a partir de esta clase.
  - Determinar que tipo de conversion desea realizar, conversion de unos objetos hacia otros (metodos *convert*) o 
  conversion de cadenas de caracteres en objetos (metodos *parse*) o conversion de objetos en cadenas de 

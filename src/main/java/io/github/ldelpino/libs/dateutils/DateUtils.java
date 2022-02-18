@@ -75,7 +75,7 @@ import java.util.GregorianCalendar;
  *
  * @author Lazaro Cesar del Pino Olivera
  * @since jdk-16.0.1
- * @version 1.0.2
+ * @version 1.0
  */
 public class DateUtils {
 
@@ -83,85 +83,107 @@ public class DateUtils {
      * El patron por defecto para la conversion de solo fechas en cadenas de
      * caracteres.
      */
-    public static String DEFAULT_DATE_PATTERN = "dd/MM/yyyy";
+    public static final String DEFAULT_DATE_PATTERN = "dd/MM/yyyy";
 
     /**
      * El patron por defecto para la conversion de solo horas en cadenas de
      * caracteres.
      */
-    public static String DEFAULT_TIME_PATTERN = "HH/mm/ss";
+    public static final String DEFAULT_TIME_PATTERN = "HH/mm/ss";
 
     /**
      * El patron por defecto para la conversion de fechas y horas en cadenas de
      * caracteres.
      */
-    public static String DEFAULT_DATE_TIME_PATTERN = "dd/MM/yyyy-HH/mm/ss";
+    public static final String DEFAULT_DATE_TIME_PATTERN = "dd/MM/yyyy-HH/mm/ss";
 
     /**
      * El identificador de la zona horaria por defeto.
      */
-    public static ZoneId DEFAULT_ZONE_ID = ZoneId.systemDefault();
+    public static final ZoneId DEFAULT_ZONE_ID = ZoneId.systemDefault();
+
+    /**
+     * Patron de conversion de fechas.
+     */
+    public static String date_pattern = DEFAULT_DATE_PATTERN;
+
+    /**
+     * Patron de conversion de horas.
+     */
+    public static String time_pattern = DEFAULT_TIME_PATTERN;
+
+    /**
+     * Patron de conversion de fechas y horas.
+     */
+    public static String date_time_pattern = DEFAULT_DATE_TIME_PATTERN;
+
+    /**
+     * La zona horaria a utilizar por defecto.
+     */
+    public static ZoneId zone_id = DEFAULT_ZONE_ID;
 
     /**
      * Establece el nuevo patron de fecha por defecto.
      *
      * @param newDatePattern el nuevo patron a establecer.
+     * @throws IllegalArgumentException si el patron de fecha no es valido.
      */
-    public static void setDefaultDatePattern(String newDatePattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(newDatePattern);
-        DEFAULT_DATE_PATTERN = newDatePattern;
+    public static void setDefaultDatePattern(String newDatePattern) throws IllegalArgumentException {
+        DateTimeFormatter.ofPattern(newDatePattern);
+        date_pattern = newDatePattern;
     }
 
     /**
      * Establece el nuevo patron de horas por defecto.
      *
      * @param newTimePattern el nuevo patron a establecer.
+     * @throws IllegalArgumentException si el patron de hora no es valido.
      */
-    public static void setDefaultTimePattern(String newTimePattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(newTimePattern);
-        DEFAULT_TIME_PATTERN = newTimePattern;
+    public static void setDefaultTimePattern(String newTimePattern) throws IllegalArgumentException {
+        DateTimeFormatter.ofPattern(newTimePattern);
+        time_pattern = newTimePattern;
     }
 
     /**
      * Establece el nuevo patron de horas por defecto.
      *
      * @param newDateTimePattern el nuevo patron a establecer.
+     * @throws IllegalArgumentException si el patron de fecha-hora no es valido.
      */
-    public static void setDefaultDateTimePattern(String newDateTimePattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(newDateTimePattern);
-        DEFAULT_DATE_TIME_PATTERN = newDateTimePattern;
+    public static void setDefaultDateTimePattern(String newDateTimePattern) throws IllegalArgumentException {
+        DateTimeFormatter.ofPattern(newDateTimePattern);
+        date_time_pattern = newDateTimePattern;
+    }
+
+    /**
+     * Establece el patron de zona horario por defecto.
+     *
+     * @param zoneId la zona horaria a utilizar por defecto.
+     */
+    public static void setDefaultZoneId(ZoneId zoneId) {
+        zone_id = zoneId;
     }
 
     /**
      * Devuelve un objeto de formato de conversion de fechas de tipo
      * {@link java.time.LocalDateTime}
      *
-     * @return la instancia del objeto de formato o nulo si el patron por
-     * defecto es incorrecto o nulo.
+     * @return la instancia del objeto de formato.
+     * @throws IllegalArgumentException si el formato no es valido.
      */
     public static DateTimeFormatter getDateTimeFormatter() {
-        try {
-            return DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_PATTERN);
-        }
-        catch (IllegalArgumentException ex) {
-        }
-        return null;
+        return DateTimeFormatter.ofPattern(date_time_pattern);
     }
 
     /**
      * Devuelve un objeto de formato de conversion de fechas de tipo
-     * {@link java.util.Date}.
+     * {@link java.text.DateFormat} para objetos {@link java.util.Date}.
      *
-     * @return la instancia del objeto de formato o nulo si el patron por
-     * defecto es incorrecto o nulo.
+     * @return la instancia del objeto de formato.
+     * @throws IllegalArgumentException si el formato no es valido.
      */
     public static DateFormat getDateFormat() {
-        try {
-            return new SimpleDateFormat(DEFAULT_DATE_TIME_PATTERN, getDateTimeFormatter().getLocale());
-        }
-        catch (NullPointerException ex) {
-        }
-        return null;
+        return new SimpleDateFormat(date_time_pattern, getDateTimeFormatter().getLocale());
     }
 
     /**
@@ -195,7 +217,7 @@ public class DateUtils {
      * defecto, de lo contrario devuelve <strong>null</strong>.
      */
     public static String format(LocalDateTime localDateTime) {
-        return format(localDateTime, DEFAULT_DATE_TIME_PATTERN);
+        return format(localDateTime, date_time_pattern);
     }
 
     /**
@@ -229,7 +251,7 @@ public class DateUtils {
      * defecto, de lo contrario devuelve <strong>null</strong>.
      */
     public static String format(Date date) {
-        return format(date, DEFAULT_DATE_TIME_PATTERN);
+        return format(date, date_time_pattern);
     }
 
     /**
@@ -255,7 +277,7 @@ public class DateUtils {
      * defecto, de lo contrario devuelve <strong>null</strong>.
      */
     public static String format(Calendar calendar) {
-        return format(calendar, DEFAULT_DATE_TIME_PATTERN);
+        return format(calendar, date_time_pattern);
     }
 
     /**
@@ -289,7 +311,7 @@ public class DateUtils {
      * defecto, de lo contrario devuelve <strong>null</strong>.
      */
     public static String format(LocalDate localDate) {
-        return format(localDate, DEFAULT_DATE_PATTERN);
+        return format(localDate, date_pattern);
     }
 
     /**
@@ -323,7 +345,7 @@ public class DateUtils {
      * defecto, de lo contrario devuelve <strong>null</strong>.
      */
     public static String format(LocalTime localTime) {
-        return format(localTime, DEFAULT_TIME_PATTERN);
+        return format(localTime, time_pattern);
     }
 
     /**
@@ -356,7 +378,7 @@ public class DateUtils {
      * convertido, de lo contrario devuelve <strong>null</strong>.
      */
     public static LocalDateTime parseToLocalDateTime(String dateTimeString) {
-        return parseToLocalDateTime(dateTimeString, DEFAULT_DATE_TIME_PATTERN);
+        return parseToLocalDateTime(dateTimeString, date_time_pattern);
     }
 
     /**
@@ -389,7 +411,7 @@ public class DateUtils {
      * contrario devuelve <strong>null</strong>.
      */
     public static Date parseToDate(String dateTimeString) {
-        return parseToDate(dateTimeString, DEFAULT_DATE_TIME_PATTERN);
+        return parseToDate(dateTimeString, date_time_pattern);
     }
 
     /**
@@ -416,7 +438,7 @@ public class DateUtils {
      * de lo contrario devuelve <strong>null</strong>.
      */
     public static Calendar parseToCalendar(String dateTimeString) {
-        return parseToCalendar(dateTimeString, DEFAULT_DATE_TIME_PATTERN);
+        return parseToCalendar(dateTimeString, date_time_pattern);
     }
 
     /**
@@ -449,7 +471,7 @@ public class DateUtils {
      * de lo contrario devuelve <strong>null</strong>.
      */
     public static LocalDate parseToLocalDate(String dateString) {
-        return parseToLocalDate(dateString, DEFAULT_DATE_PATTERN);
+        return parseToLocalDate(dateString, date_pattern);
     }
 
     /**
@@ -482,7 +504,7 @@ public class DateUtils {
      * de lo contrario devuelve <strong>null</strong>.
      */
     public static LocalTime parseToLocalTime(String timeString) {
-        return parseToLocalTime(timeString, DEFAULT_TIME_PATTERN);
+        return parseToLocalTime(timeString, time_pattern);
     }
 
     /**
@@ -514,7 +536,7 @@ public class DateUtils {
      * <strong>false</strong>.
      */
     public static boolean validDate(String dateTimeString) {
-        return validDate(dateTimeString, DEFAULT_DATE_TIME_PATTERN);
+        return validDate(dateTimeString, date_time_pattern);
     }
 
     /**
@@ -524,7 +546,7 @@ public class DateUtils {
      * @return la instancia del objeto Calendar convertida desde LocalDateTime.
      */
     public static Calendar convertFromLocalDateTimeToCalendar(LocalDateTime localDateTime) {
-        return GregorianCalendar.from(localDateTime.atZone(DEFAULT_ZONE_ID));
+        return GregorianCalendar.from(localDateTime.atZone(zone_id));
     }
 
     /**
@@ -534,7 +556,7 @@ public class DateUtils {
      * @return la instancia del objeto LocalDateTime convertido desde Calendar.
      */
     public static LocalDateTime convertFromCalendarToLocalDate(Calendar calendar) {
-        return calendar.toInstant().atZone(DEFAULT_ZONE_ID).toLocalDateTime();
+        return calendar.toInstant().atZone(zone_id).toLocalDateTime();
     }
 
     /**
@@ -544,7 +566,7 @@ public class DateUtils {
      * @return el objeto Date convertido.
      */
     public static Date convertFromLocalDateToDate(LocalDateTime localDateTime) {
-        return Date.from(localDateTime.atZone(DEFAULT_ZONE_ID).toInstant());
+        return Date.from(localDateTime.atZone(zone_id).toInstant());
     }
 
     /**
@@ -554,7 +576,7 @@ public class DateUtils {
      * @return el objeto de tipo LocalDateTime convertido.
      */
     public static LocalDateTime convertFromDateToLocalDate(Date date) {
-        return date.toInstant().atZone(DEFAULT_ZONE_ID).toLocalDateTime();
+        return date.toInstant().atZone(zone_id).toLocalDateTime();
     }
 
     /**
@@ -564,6 +586,6 @@ public class DateUtils {
      * @return la instancia del objeto de tipo Calendar convertida.
      */
     public static Calendar convertFromDateToCalendar(Date date) {
-        return GregorianCalendar.from(date.toInstant().atZone(DEFAULT_ZONE_ID));
+        return GregorianCalendar.from(date.toInstant().atZone(zone_id));
     }
 }

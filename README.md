@@ -1,7 +1,5 @@
 # DateUtils
 
-Contruccion de la version 1.0.2 de la libreria *En proceso....*
-
 ## ¿Que es DateUtils?
 									
 **DateUtils** es una libreria que incluye funcionalidades basicas de conversion de objetos relacionados 
@@ -15,19 +13,18 @@ Para mas informacion sobre la documentacion de la libreria, dirijase [aqui](docs
 ## Requerimientos:
 
 **JDK:**
-11 o una version mas actual.
-La libreria fue realizada bajo la version 16.0.1 de la maquina virtual de Java con la version de compilacion 11.
+JDK 16 o una version mas actual.
+La libreria fue realizada bajo la version 16.0.1 de la maquina virtual de Java.
 
 **Maven:**
+Apache Maven 3.8.1
 La libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1
 		
 ## Pruebas sobre DateUtils:
 		
-**DateUtils** posee todas las pruebas unitarias realizadas con *JUnit* en su version 4.13.1.
-La libreria poseera una aplicacion de prueba (Demo), que permita probar y visualizar el funcionamiento 
-de los metodos contenidos.
+**DateUtils** posee todas las pruebas unitarias realizadas con *JUnit* en su version 4.13.2.
 		
 ## Licencia:
 
-La libreria ha sido realizada bajo la Apache License v2.0. Para mas informacion dirijase 
+La libreria ha sido realizada bajo The Apache License, Version 2.0 Para mas informacion dirijase 
 al archivo [LICENSE](LICENSE).
