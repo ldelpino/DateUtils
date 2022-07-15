@@ -20,11 +20,18 @@ La libreria fue realizada bajo la version 16.0.1 de la maquina virtual de Java.
 Apache Maven 3.8.1
 La libreria fue realizada a partir de [Apache Maven](https://maven.apache.org/) en su version 3.8.1
 		
-## Pruebas sobre DateUtils:
+## Pruebas unitarias:
 		
 **DateUtils** posee todas las pruebas unitarias realizadas con *JUnit* en su version 4.13.2.
 		
 ## Licencia:
 
-La libreria ha sido realizada bajo The Apache License, Version 2.0 Para mas informacion dirijase 
+La libreria ha sido desarrollada bajo The Apache License, Version 2.0 Para mas informacion dirijase 
 al archivo [LICENSE](LICENSE).
+
+## Datos del desarrollador
+
+Version: 2.0
+Autor: Lázaro César del Pino Olivera. Copyright © 2022
+Direccion url: https://github.io/ldelpino/date_utils
+Correo electrónico: lazaro.delpino.olivera@gmail.com
