@@ -24,15 +24,17 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Permite la conversion de objetos representados como fechas y horas en objetos
+ * Permite la conversión de objetos representados como fechas y horas en objetos
  * similares.
  * <p>
  * La clase está compuesta por un conjunto de métodos estáticos que se encargan
- * de la conversion de objetos de la API de Java relacionados con fechas y horas
+ * de la conversión de objetos de la API de Java relacionados con fechas y horas
  * en objetos similares. La clase funciona como una clase de utilidad para
- * realizar conversiones, permitiendo que sea mas fácil el uso de objetos
- * relacionados con fechas y horas. La clase esta establecida como
- * <strong>final</strong> para no permitir crear clases que hereden de ella.
+ * realizar conversiones, permitiendo que sea más fácil el uso de objetos
+ * relacionados con fechas y horas. La clase está establecida como
+ * <strong>final</strong> para no permitir crear clases que hereden de ella y el
+ * constructor está establecido como <strong>private</strong> para no pemitir
+ * nuevas instancias de la clase.
  * </p>
  * <p>
  * En el modelo de conversion de hacen uso de los siguentes tipos de datos de
@@ -47,9 +49,9 @@ import java.util.GregorianCalendar;
  * </ul>
  * </p>
  *
- * @author Lazaro Cesar del Pino Olivera
+ * @author Lázaro César del Pino Olivera
  * @since jdk-16.0.1
- * @version 2.0
+ * @version 1.0
  */
 public final class DateConverters {
 

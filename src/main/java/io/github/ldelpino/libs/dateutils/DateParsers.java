@@ -19,6 +19,9 @@ package io.github.ldelpino.libs.dateutils;
  *
  * @author ldelpino
  */
-public class DateParsers extends DatePatterns {
+public final class DateParsers {
     
+    private DateParsers() {
+        
+    }
 }

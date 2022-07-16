@@ -116,8 +116,8 @@
  
  # Metodología de uso de la librería
 
- - Hacer uso de la clase **DateConverters** para la conversion de objetos de fechas y horas en otros similares.
- - Hacer uso de las clases **DateFormatters** y **DateParsers** para la conversion de objetos de fechas y horas
+ - Hacer uso de la clase **DateConverters** para la conversión de objetos de fechas y horas en otros similares.
+ - Hacer uso de las clases **DateFormatters** y **DateParsers** para la conversión de objetos de fechas y horas
  en cadenas de caracteres y viceversa.
- - Hacer uso de la clase **DatePatterns** para el estableciemto y obtencion de los valores predeterminados de formatos 
- de fecha y hora.
+ - Hacer uso de la clase **DatePatterns** para el establecimiento y obtención de los valores predeterminados de 
+ formatos de fecha y hora.
