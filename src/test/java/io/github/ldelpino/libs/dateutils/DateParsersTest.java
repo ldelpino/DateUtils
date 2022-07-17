@@ -15,11 +15,14 @@
  */
 package io.github.ldelpino.libs.dateutils;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -29,15 +32,15 @@ import static org.junit.Assert.*;
  */
 public class DateParsersTest {
 
-    public DateParsersTest() {
-    }
+    private final Instant instant = Instant.EPOCH;
 
     @Test
     public void testParseToDate_String_String() {
         System.out.println("parseToDate");
-        String date = "";
-        String dateTimePattern = "";
-        Date expResult = null;
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DatePatterns.getDateTimePattern());
+        String date = dateTimeFormatter.format(instant);
+        String dateTimePattern = DatePatterns.getDateTimePattern();
+        Date expResult = Date.from(instant);
         Date result = DateParsers.parseToDate(date, dateTimePattern);
         assertEquals(expResult, result);
     }
@@ -45,9 +48,10 @@ public class DateParsersTest {
     @Test
     public void testParseToCalendar_String_String() {
         System.out.println("parseToCalendar");
-        String calendar = "";
-        String dateTimePattern = "";
-        Calendar expResult = null;
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DatePatterns.getDateTimePattern());
+        String calendar = dateTimeFormatter.format(instant);
+        String dateTimePattern = DatePatterns.getDateTimePattern();
+        Calendar expResult = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
         Calendar result = DateParsers.parseToCalendar(calendar, dateTimePattern);
         assertEquals(expResult, result);
     }
@@ -55,9 +59,10 @@ public class DateParsersTest {
     @Test
     public void testParseToLocalDate_String_String() {
         System.out.println("parseToLocalDate");
-        String localDate = "";
-        String datePattern = "";
-        LocalDate expResult = null;
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(DatePatterns.getDatePattern());
+        String localDate = dateFormatter.format(instant);
+        String datePattern = DatePatterns.getDatePattern();
+        LocalDate expResult = LocalDate.from(instant);
         LocalDate result = DateParsers.parseToLocalDate(localDate, datePattern);
         assertEquals(expResult, result);
     }
@@ -65,9 +70,10 @@ public class DateParsersTest {
     @Test
     public void testParseToLocalTime_String_String() {
         System.out.println("parseToLocalTime");
-        String localTime = "";
-        String timePattern = "";
-        LocalTime expResult = null;
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern(DatePatterns.getTimePattern());
+        String localTime = timeFormatter.format(instant);
+        String timePattern = DatePatterns.getTimePattern();
+        LocalTime expResult = LocalTime.from(instant);
         LocalTime result = DateParsers.parseToLocalTime(localTime, timePattern);
         assertEquals(expResult, result);
     }
@@ -75,9 +81,10 @@ public class DateParsersTest {
     @Test
     public void testParseToLocalDateTime_String_String() {
         System.out.println("parseToLocalDateTime");
-        String localDateTime = "";
-        String dateTimePattern = "";
-        LocalDateTime expResult = null;
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DatePatterns.getDateTimePattern());
+        String localDateTime = dateTimeFormatter.format(instant);
+        String dateTimePattern = DatePatterns.getDateTimePattern();
+        LocalDateTime expResult = LocalDateTime.from(instant);
         LocalDateTime result = DateParsers.parseToLocalDateTime(localDateTime, dateTimePattern);
         assertEquals(expResult, result);
     }

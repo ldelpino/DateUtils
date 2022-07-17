@@ -15,6 +15,7 @@
  */
 package io.github.ldelpino.libs.dateutils;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -30,11 +31,13 @@ import static org.junit.Assert.*;
  */
 public class DateConvertersTest {
 
+    private final Instant instant = Instant.EPOCH;
+    
     @Test
     public void testConvertFromDateToCalendar() {
         System.out.println("convertFromDateToCalendar");
-        Date date = new Date(122, 6, 15, 4, 40, 10);
-        Calendar expResult = new GregorianCalendar(2022, 6, 15, 4, 40, 10);
+        Date date = Date.from(instant);
+        Calendar expResult = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
         Calendar result = DateConverters.convertFromDateToCalendar(date);
         assertEquals(expResult.getTimeInMillis(), result.getTimeInMillis());
     }
@@ -42,8 +45,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromDateToLocalDate() {
         System.out.println("convertFromDateToLocalDate");
-        Date date = new Date(122, 6, 15, 4, 40, 10);
-        LocalDate expResult = LocalDate.of(2022, 7, 15);
+        Date date = Date.from(instant);
+        LocalDate expResult = LocalDate.from(instant);
         LocalDate result = DateConverters.convertFromDateToLocalDate(date);
         assertEquals(expResult, result);
     }
@@ -51,8 +54,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromDateToLocalTime() {
         System.out.println("convertFromDateToLocalTime");
-        Date date = new Date(122, 6, 15, 4, 40, 10);
-        LocalTime expResult = LocalTime.of(4, 40, 10);
+        Date date = Date.from(instant);
+        LocalTime expResult = LocalTime.from(instant);
         LocalTime result = DateConverters.convertFromDateToLocalTime(date);
         assertEquals(expResult, result);
     }
@@ -60,8 +63,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromDateToLocalDateTime() {
         System.out.println("convertFromDateToLocalDateTime");
-        Date date = new Date(122, 6, 15, 4, 40, 10);
-        LocalDateTime expResult = LocalDateTime.of(2022, 7, 15, 4, 40, 10);
+        Date date = Date.from(instant);
+        LocalDateTime expResult = LocalDateTime.from(instant);
         LocalDateTime result = DateConverters.convertFromDateToLocalDateTime(date);
         assertEquals(expResult, result);
     }
@@ -69,8 +72,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromDateToSQLDate() {
         System.out.println("convertFromDateToSQLDate");
-        Date date = new Date(1000);
-        java.sql.Date expResult = new java.sql.Date(1000);
+        Date date = Date.from(instant);
+        java.sql.Date expResult = new java.sql.Date(date.getTime());
         java.sql.Date result = DateConverters.convertFromDateToSQLDate(date);
         assertEquals(expResult, result);
     }
@@ -78,8 +81,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromCalendarToLocalDate() {
         System.out.println("convertFromCalendarToLocalDate");
-        Calendar calendar = new GregorianCalendar(2022, 6, 15, 4, 40, 10);
-        LocalDate expResult = LocalDate.of(2022, 7, 15);
+        Calendar calendar = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
+        LocalDate expResult = LocalDate.from(instant);
         LocalDate result = DateConverters.convertFromCalendarToLocalDate(calendar);
         assertEquals(expResult, result);
     }
@@ -87,8 +90,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromCalendarToLocalTime() {
         System.out.println("convertFromCalendarToLocalTime");
-        Calendar calendar = new GregorianCalendar(2022, 6, 15, 4, 40, 10);
-        LocalTime expResult = LocalTime.of(4, 40, 10);
+        Calendar calendar = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
+        LocalTime expResult = LocalTime.from(instant);
         LocalTime result = DateConverters.convertFromCalendarToLocalTime(calendar);
         assertEquals(expResult, result);
     }
@@ -96,8 +99,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromCalendarToLocalDateTime() {
         System.out.println("convertFromCalendarToLocalDateTime");
-        Calendar calendar = new GregorianCalendar(2022, 6, 15, 4, 40, 10);
-        LocalDateTime expResult = LocalDateTime.of(2022, 7, 15, 4, 40, 10);
+        Calendar calendar = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
+        LocalDateTime expResult = LocalDateTime.from(instant);
         LocalDateTime result = DateConverters.convertFromCalendarToLocalDateTime(calendar);
         assertEquals(expResult, result);
     }
@@ -105,8 +108,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalDateToDate() {
         System.out.println("convertFromLocalDateToDate");
-        LocalDate localDate = LocalDate.of(2022, 7, 15);
-        Date expResult = new Date(122, 6, 15, 0, 0, 0);
+        LocalDate localDate = LocalDate.from(instant);
+        Date expResult = Date.from(instant);
         Date result = DateConverters.convertFromLocalDateToDate(localDate);
         assertEquals(expResult, result);
     }
@@ -114,8 +117,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalDateToCalendar() {
         System.out.println("convertFromLocalDateToCalendar");
-        LocalDate localDate = LocalDate.of(2022, 7, 15);
-        Calendar expResult = new GregorianCalendar(2022, 6, 15, 0, 0, 0);
+        LocalDate localDate = LocalDate.from(instant);
+        Calendar expResult = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
         Calendar result = DateConverters.convertFromLocalDateToCalendar(localDate);
         assertEquals(expResult.getTimeInMillis(), result.getTimeInMillis());
     }
@@ -123,8 +126,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalDateToLocalDateTime() {
         System.out.println("convertFromLocalDateToLocalDateTime");
-        LocalDate localDate = LocalDate.of(2022, 7, 15);
-        LocalDateTime expResult = LocalDateTime.of(2022, 7, 15, 0, 0, 0);
+        LocalDate localDate = LocalDate.from(instant);
+        LocalDateTime expResult = LocalDateTime.from(instant);
         LocalDateTime result = DateConverters.convertFromLocalDateToLocalDateTime(localDate);
         assertEquals(expResult, result);
     }
@@ -132,18 +135,17 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalTimeToDate() {
         System.out.println("convertFromLocalTimeToDate");
-        LocalTime localTime = LocalTime.of(4, 40, 10);
-        Date expResult = new Date(10000);
-        Date result = DateConverters.convertFromLocalTimeToDate(localTime);
+        LocalTime localTime = LocalTime.from(instant);
+        Date result = Date.from(instant);
+        Date expResult = DateConverters.convertFromLocalTimeToDate(localTime);
         assertEquals(expResult, result);
     }
 
     @Test
     public void testConvertFromLocalTimeToCalendar() {
         System.out.println("convertFromLocalTimeToCalendar");
-        LocalTime localTime = LocalTime.of(4, 40, 10);
-        Calendar expResult = new GregorianCalendar(LocalDate.EPOCH.getYear(), LocalDate.EPOCH.getMonth().getValue() - 1, 
-                LocalDate.EPOCH.getDayOfMonth(), 4, 40, 10);
+        LocalTime localTime = LocalTime.from(instant);
+        Calendar expResult = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
         Calendar result = DateConverters.convertFromLocalTimeToCalendar(localTime);
         assertEquals(expResult.getTimeInMillis(), result.getTimeInMillis());
     }
@@ -151,8 +153,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalTimeToLocalDateTime() {
         System.out.println("convertFromLocalTimeToLocalDateTime");
-        LocalTime localTime = LocalTime.of(4, 40, 10);
-        LocalDateTime expResult = LocalDateTime.of(LocalDate.MIN, LocalTime.of(4, 40, 10));
+        LocalTime localTime = LocalTime.from(instant);
+        LocalDateTime expResult = LocalDateTime.from(instant);
         LocalDateTime result = DateConverters.convertFromLocalTimeToLocalDateTime(localTime);
         assertEquals(expResult, result);
     }
@@ -160,8 +162,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalDateTimeToDate() {
         System.out.println("convertFromLocalDateTimeToDate");
-        LocalDateTime localDateTime = LocalDateTime.of(2022, 7, 15, 4, 40, 10);
-        Date expResult = new Date(122, 6, 15, 4, 40, 10);
+        LocalDateTime localDateTime = LocalDateTime.from(instant);
+        Date expResult = Date.from(instant);
         Date result = DateConverters.convertFromLocalDateTimeToDate(localDateTime);
         assertEquals(expResult, result);
     }
@@ -169,8 +171,8 @@ public class DateConvertersTest {
     @Test
     public void testConvertFromLocalDateTimeToCalendar() {
         System.out.println("convertFromLocalDateTimeToCalendar");
-        LocalDateTime localDateTime = LocalDateTime.of(2022, 7, 15, 4, 40, 10);
-        Calendar expResult = new GregorianCalendar(2022, 6, 15, 4, 40, 10);
+        LocalDateTime localDateTime = LocalDateTime.from(instant);
+        Calendar expResult = GregorianCalendar.from(instant.atZone(DateConverters.getTimeZone()));
         Calendar result = DateConverters.convertFromLocalDateTimeToCalendar(localDateTime);
         assertEquals(expResult.getTimeInMillis(), result.getTimeInMillis());
     }

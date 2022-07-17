@@ -36,7 +36,6 @@ import java.util.GregorianCalendar;
  * constructor está establecido como <strong>private</strong> para no pemitir
  * nuevas instancias de la clase.
  * </p>
- * <p>
  * En el modelo de conversion de hacen uso de los siguentes tipos de datos de
  * fechas y horas:
  * <ul>
@@ -47,7 +46,6 @@ import java.util.GregorianCalendar;
  * <li>java.time.LocalTime</li>
  * <li>java.time.LocalDateTime</li>
  * </ul>
- * </p>
  *
  * @author Lázaro César del Pino Olivera
  * @since jdk-16.0.1

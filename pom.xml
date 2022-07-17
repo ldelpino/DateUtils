@@ -46,7 +46,7 @@
     </scm>
     
     <distributionManagement>
-        <snapshotRepository>
+        <!--<snapshotRepository>
             <id>ossrh</id>
             <name>DateUtils Snapshots</name>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
@@ -55,12 +55,12 @@
             <id>ossrh</id>
             <name>DateUtils Releases</name>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-        <!--<repository>
+        </repository>-->
+        <repository>
             <id>github</id>
             <name>GitHub ldelpino Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/ldelpino/DateUtils</url>
-        </repository>-->
+        </repository>
     </distributionManagement>
     
     <issueManagement>
@@ -111,7 +111,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.4.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
@@ -170,7 +170,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <executions>
                     <execution>
@@ -198,7 +198,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>3.0.0-M6</version>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
@@ -213,7 +213,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.6.0</version>
+            <version>5.8.2</version>
             <scope>test</scope>
             <type>jar</type>
         </dependency>
@@ -221,14 +221,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.6.0</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
         
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.0</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
         
