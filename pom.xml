@@ -46,7 +46,7 @@
     </scm>
     
     <distributionManagement>
-        <!--<snapshotRepository>
+        <snapshotRepository>
             <id>ossrh</id>
             <name>DateUtils Snapshots</name>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
@@ -55,12 +55,12 @@
             <id>ossrh</id>
             <name>DateUtils Releases</name>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>-->
-        <repository>
+        </repository>
+        <!--<repository>
             <id>github</id>
             <name>GitHub ldelpino Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/ldelpino/DateUtils</url>
-        </repository>
+        </repository>-->
     </distributionManagement>
     
     <issueManagement>

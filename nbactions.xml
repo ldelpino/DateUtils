@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
         <action>
-            <actionName>CUSTOM-Clean And Deploy</actionName>
-            <displayName>Clean And Deploy</displayName>
-            <goals>
-                <goal>clean</goal>
-                <goal>deploy</goal>
-            </goals>
-            <properties>
-                <skipTests>true</skipTests>
-            </properties>
-        </action>
-        <action>
             <actionName>run</actionName>
             <packagings>
                 <packaging>jar</packaging>
@@ -26,6 +15,7 @@
                 <exec.appArgs></exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
+                
             </properties>
         </action>
         <action>
@@ -58,9 +48,20 @@
             <properties>
                 <exec.vmArgs>export MAVEN_OPTS="--add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.desktop/java.awt.font=ALL-UNNAMED"</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
-                <exec.appArgs></exec.appArgs>
+                
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-Deploy</actionName>
+            <displayName>Deploy</displayName>
+            <recursive>false</recursive>
+            <goals>
+                <goal>deploy</goal>
+                
+            </goals>
+        </action>
+        
     </actions>

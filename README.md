@@ -33,5 +33,5 @@ al archivo [LICENSE](LICENSE).
 
 Version: 2.0
 Autor: Lázaro César del Pino Olivera. Copyright © 2022
-Direccion url: https://github.io/ldelpino/date_utils
+Direccion url: https://ldelpino.github.io/DateUtils/
 Correo electrónico: lazaro.delpino.olivera@gmail.com
