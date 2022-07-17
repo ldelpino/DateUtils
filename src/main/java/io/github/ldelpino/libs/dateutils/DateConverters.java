@@ -245,7 +245,7 @@ public final class DateConverters {
      *
      * @return la zona horaria establecida por defecto.
      */
-    public static ZoneId getDefaultTimeZone() {
+    public static ZoneId getTimeZone() {
         return zone_id;
     }
 

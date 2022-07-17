@@ -147,11 +147,11 @@ public final class DateFormatters {
      * cadena de caracteres a partir de un patrón de formato especificado.
      *
      * @param date el objeto de fecha y hora a convertir en cadena.
-     * @param pattern el patrón de formato de fecha y hora.
+     * @param dateTimePattern el patrón de formato de fecha y hora.
      * @return la cadena de caracteres que convertida.
      */
-    public static String format(Date date, String pattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+    public static String format(Date date, String dateTimePattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimePattern);
         return formatter.format(date.toInstant());
     }
 
@@ -160,11 +160,11 @@ public final class DateFormatters {
      * una cadena de caracteres a partir de un patrón de formato especificado.
      *
      * @param calendar el objeto de fecha y hora a convertir en cadena.
-     * @param pattern el patrón de formato de fecha y hora.
+     * @param dateTimePattern el patrón de formato de fecha y hora.
      * @return la cadena de caracteres que convertida.
      */
-    public static String format(Calendar calendar, String pattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+    public static String format(Calendar calendar, String dateTimePattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimePattern);
         return formatter.format(calendar.toInstant());
     }
 
@@ -173,11 +173,11 @@ public final class DateFormatters {
      * cadena de caracteres a partir de un patrón de formato especificado.
      *
      * @param localDate el objeto de fecha a convertir en cadena.
-     * @param pattern el patrón de formato de fecha.
+     * @param datePattern el patrón de formato de fecha.
      * @return la cadena de caracteres que convertida.
      */
-    public static String format(LocalDate localDate, String pattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+    public static String format(LocalDate localDate, String datePattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
         return formatter.format(localDate);
     }
 
@@ -186,11 +186,11 @@ public final class DateFormatters {
      * cadena de caracteres a partir de un patrón de formato especificado.
      *
      * @param localTime el objeto de hora a convertir en cadena.
-     * @param pattern el patrón de formato de hora.
+     * @param timePattern el patrón de formato de hora.
      * @return la cadena de caracteres que convertida.
      */
-    public static String format(LocalTime localTime, String pattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+    public static String format(LocalTime localTime, String timePattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(timePattern);
         return formatter.format(localTime);
     }
 
@@ -200,11 +200,11 @@ public final class DateFormatters {
      * un patrón de formato especificado.
      *
      * @param localDateTime el objeto de fecha y hora a convertir en cadena.
-     * @param pattern el patrón de formato de fecha y hora.
+     * @param dateTimePattern el patrón de formato de fecha y hora.
      * @return la cadena de caracteres que convertida.
      */
-    public static String format(LocalDateTime localDateTime, String pattern) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+    public static String format(LocalDateTime localDateTime, String dateTimePattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimePattern);
         return formatter.format(localDateTime);
     }
 }
