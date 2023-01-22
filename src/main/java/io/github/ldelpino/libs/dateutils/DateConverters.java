@@ -36,7 +36,7 @@ import java.util.GregorianCalendar;
  * constructor está establecido como <strong>private</strong> para no pemitir
  * nuevas instancias de la clase.
  * </p>
- * En el modelo de conversion de hacen uso de los siguentes tipos de datos de
+ * En el modelo de conversión se hacen uso de los siguentes tipos de datos de
  * fechas y horas:
  * <ul>
  * <li>java.util.Date</li>
@@ -72,7 +72,7 @@ public final class DateConverters {
     }
 
     /**
-     * Convierte un objeto de tipo java.util.Date en un objeto de tipo Calendar.
+     * Convierte un objeto de tipo java.util.Date en un objeto de tipo Calendar
      *
      * @param date el objeto de tipo java.util.Date a convertir
      * @return el objeto de tipo Calendar convertido.

@@ -2,13 +2,13 @@
 
 ## ¿Que es DateUtils?
 									
-**DateUtils** es una libreria que incluye funcionalidades basicas de conversion de objetos relacionados 
-con las fechas y las horas. La libreria permite la conversion de objetos en otros, asi como la conversion 
-de los mismos en cadenas de caracteres entendibles de una manera rapida y efectiva.
+**DateUtils** es una librería que incluye funcionalidades básicas de conversión de objetos relacionados 
+con las fechas y las horas. La librería permite la conversión de objetos en otros, así como la conversión 
+de los mismos en cadenas de caracteres entendibles de una manera rápida y efectiva.
 		 
-## Documentacion
+## Documentación
 									
-Para mas informacion sobre la documentacion de la libreria, dirijase [aqui](docs/index.md).
+Para mas información sobre la documentacion de la libreria, dirijase [aqui](docs/index.md).
 		
 ## Requerimientos:
 

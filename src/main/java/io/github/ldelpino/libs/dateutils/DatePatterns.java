@@ -23,15 +23,15 @@ import java.time.format.DateTimeFormatter;
  * <p>
  * La clase DatePatterns se encarga de almacenar los valores por defecto de los
  * patrones de fecha, hora y fecha y hora, estos patrones son utilizados para la
- * conversionde objetos en cadenas de caracteres y viceversa, metodos que se
+ * conversion de objetos en cadenas de caracteres y viceversa, métodos que se
  * encuentran en las clases
  * {@link io.github.ldelpino.libs.dateutils.DateFormatters} y
  * {@link io.github.ldelpino.libs.dateutils.DateParsers}. La clase contiene
- * ademas las constantes predeterminadas de los valores de los patrones de
+ * además las constantes predeterminadas de los valores de los patrones de
  * formato en caso de no establecerse uno o para utilizarlos por defecto
  * siempre.</p>
  *
- * @author Lazaro Cesar del Pino Olivera
+ * @author Lázaro César del Pino Olivera
  * @since jdk-16.0.1
  * @version 2.0
  * @see io.github.ldelpino.libs.dateutils.DateFormatters
@@ -40,43 +40,51 @@ import java.time.format.DateTimeFormatter;
 public final class DatePatterns {
 
     /**
-     * El patron por defecto para la conversion de solo fechas en cadenas de
+     * El patrón por defecto para la conversión de solo fechas en cadenas de
      * caracteres.
      */
     public static final String DEFAULT_DATE_PATTERN = "dd/MM/yyyy";
 
     /**
-     * El patron por defecto para la conversion de solo horas en cadenas de
+     * El patrón por defecto para la conversión de solo horas en cadenas de
      * caracteres.
      */
     public static final String DEFAULT_TIME_PATTERN = "HH/mm/ss";
 
     /**
-     * El patron por defecto para la conversion de fechas y horas en cadenas de
+     * El patrón por defecto para la conversión de fechas y horas en cadenas de
      * caracteres.
      */
     public static final String DEFAULT_DATE_TIME_PATTERN = "dd/MM/yyyy-HH/mm/ss";
 
     /**
-     * Patron de conversion de fechas.
+     * Patrón de conversión de fechas.
      */
     private static String date_pattern = DEFAULT_DATE_PATTERN;
 
     /**
-     * Patron de conversion de horas.
+     * Patrón de conversión de horas.
      */
     private static String time_pattern = DEFAULT_TIME_PATTERN;
 
     /**
-     * Patron de conversion de fechas y horas.
+     * Patrón de conversión de fechas y horas.
      */
     private static String date_time_pattern = DEFAULT_DATE_TIME_PATTERN;
 
     /**
-     * Establece el nuevo patron de fecha por defecto.
+     * El constructor se establece como privado para no permitir instancias de
+     * esta clase.
+     */
+    private DatePatterns() {
+
+    }
+
+    /**
+     * Establece el nuevo patrón de fecha por defecto.
      *
-     * @param newDatePattern el nuevo patron a establecer.
-     * @throws IllegalArgumentException si el patron de fecha no es valido.
+     * @param newDatePattern el nuevo patrón a establecer.
+     * @throws IllegalArgumentException si el patrón de fecha no es válido.
      */
     public static void setDatePattern(String newDatePattern) throws IllegalArgumentException {
         DateTimeFormatter.ofPattern(newDatePattern);
@@ -84,19 +92,19 @@ public final class DatePatterns {
     }
 
     /**
-     * Devuelve el patron de fecha establecido por defecto.
+     * Devuelve el patrón de fecha establecido por defecto.
      *
-     * @return el patron de fecha establecido por defecto.
+     * @return el patrón de fecha establecido por defecto.
      */
     public static String getDatePattern() {
         return date_pattern;
     }
 
     /**
-     * Establece el nuevo patron de horas por defecto.
+     * Establece el nuevo patrón de horas por defecto.
      *
-     * @param newTimePattern el nuevo patron a establecer.
-     * @throws IllegalArgumentException si el patron de hora no es valido.
+     * @param newTimePattern el nuevo patrón a establecer.
+     * @throws IllegalArgumentException si el patrón de hora no es válido.
      */
     public static void setTimePattern(String newTimePattern) throws IllegalArgumentException {
         DateTimeFormatter.ofPattern(newTimePattern);
@@ -104,19 +112,19 @@ public final class DatePatterns {
     }
 
     /**
-     * Devuelve el patron de hora establecido por defecto.
+     * Devuelve el patrón de hora establecido por defecto.
      *
-     * @return el patron de hora establecido por defecto.
+     * @return el patrón de hora establecido por defecto.
      */
     public static String getTimePattern() {
         return time_pattern;
     }
 
     /**
-     * Establece el nuevo patron de horas por defecto.
+     * Establece el nuevo patrón de horas por defecto.
      *
-     * @param newDateTimePattern el nuevo patron a establecer.
-     * @throws IllegalArgumentException si el patron de fecha-hora no es valido.
+     * @param newDateTimePattern el nuevo patrón a establecer.
+     * @throws IllegalArgumentException si el patrón de fecha-hora no es válido.
      */
     public static void setDateTimePattern(String newDateTimePattern) throws IllegalArgumentException {
         DateTimeFormatter.ofPattern(newDateTimePattern);
@@ -124,15 +132,11 @@ public final class DatePatterns {
     }
 
     /**
-     * Devuelve el patron de fecha y hora establecido por defecto.
+     * Devuelve el patrón de fecha y hora establecido por defecto.
      *
-     * @return el patron de fecha y hora establecido por defecto.
+     * @return el patrón de fecha y hora establecido por defecto.
      */
     public static String getDateTimePattern() {
         return date_time_pattern;
-    }
-
-    private DatePatterns() {
-
     }
 }
